@@ -27,18 +27,17 @@
                 <tbody>
 
                 <?php
-                    $no = 1; 
                     foreach($data_customer as $hasil){ 
                 ?>
 
                   <tr>
-                    <td><?php echo $no++ ?></td>
+                    <td><?php echo $hasil->id ?></td>
                     <td><?php echo $hasil->name ?></td>
                     <td><?php echo $hasil->address ?></td>
                     <td><?php echo $hasil->create_at ?></td>
                     <td><?php echo $hasil->phone ?></td>
                     <td>
-                        <a href="<?php echo base_url() ?>message?id=<?php echo $hasil->id ?>" class="btn btn-md btn-success">Message</a>
+                        <a href="<?php echo base_url() ?>message?id=<?php echo $hasil->id ?>&token=<?php echo $hasil->token ?>" class="btn btn-md btn-success">Message</a>
                     </td>
                   </tr>
 

@@ -7,12 +7,13 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>/asset/css/style.css">
 </head>
 <body>
-
     <div class="container" style="margin-top: 80px">
         <?php echo $this->session->flashdata('notif') ?>
+        <a href="<?php echo base_url() ?>customer" class="btn btn-md btn-success">Back</a>
         <hr>
         <div class="col-md-12">
-        <?php echo form_open('message/simpan?id='.$id_customer) ?>
+        <?php echo form_open('message/simpan?id='.$id_customer.'&token='.$token) ?>
+        
                 <thead>
                   <tr>
                   </tr>
@@ -25,16 +26,24 @@
                   <tr>
                     <td><?php echo $hasil->message ?></td><br>
                     <td><?php echo $hasil->create_at ?></td><br>  
-                    </td>
+                    <br>
+                    <td>from : <?php echo $hasil->frm ?></td><br>
                   </tr>
                 </div>
 
                 <?php } ?><br>
                 </tbody>
                 <div class="form-group">
-                <input type="text" name="message" class="form-control" placeholder="Masukkan Pesan">
+                  <div class="row">
+                    <div class="col-md-11">  
+                      <input type="text" name="message" class="form-control" placeholder="Masukkan Pesan">
+                    </div>
+                    <div class="col-md-1">
+                      <button type="submit" class="btn btn-md btn-success">Send</button>
+                    </div>
+                  </div>
               </div>
-              <button type="submit" class="btn btn-md btn-success">Send</button>
+        <?php echo form_close() ?>
         </div>
     </div>
 

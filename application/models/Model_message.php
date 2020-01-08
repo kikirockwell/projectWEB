@@ -16,7 +16,7 @@ class Model_message extends CI_model{
     public function simpan($id, $msg)
     {
 
-        $query = $this->db->query("select insert_message($id, '$msg')");
+        $query = $this->db->query("select insert_message($id, '$msg', 'Agent')");
 
         if($query){
             return true;
